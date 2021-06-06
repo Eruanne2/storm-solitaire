@@ -6,8 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Run Log</title>
-  <script src="./bundle.js"></script>
+  <title>Storm Solitaire</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,28 +14,40 @@
 <body>
   <h1>Storm Solitaire</h1>
 
-  <section class='board'>
+  <section class='game'>
+    <ul class='scoring'>
+      <li>Timer</li>
+      <li>Moves</li>
+      <li>High Score</li>
+    </ul>
+    <ul class='options'>
+      <li>New Game</li>
+      <li>Restart Game</li>
+      <li>Choose Deck</li>
+    </ul>
+  </section>
+
+  <section class='board-container'>
     <div class='hand'></div>
     <div class='waste'></div>
 
-    <div class='foundations'>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <div class='foundations-container'>
+      <ul class='foundations'>
+        <li id='foundations-1'></li>
+        <li id='foundations-2'></li>
+        <li id='foundations-3'></li>
+        <li id='foundations-4'></li>
       </ul>
     </div>
-    <div class='foundations'>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <div class='tableau-container'>
+      <ul class='tableau'>
+        <li id='stack-1'></li>
+        <li id='stack-2'></li>
+        <li id='stack-3'></li>
+        <li id='stack-4'></li>
+        <li id='stack-5'></li>
+        <li id='stack-6'></li>
+        <li id='stack-7'></li>
       </ul>
     </div>
 

@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-container {
+  height: 400px;
+  border: 1px solid blue;
+}
