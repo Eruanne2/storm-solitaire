@@ -43,8 +43,21 @@ class Board {
 
   }
 
-  moveCardToFoundations(card) {
-    
+  moveCardToFoundations(card, from) {
+    if (card.comesAfter(this.foundations[card.suit].slice(-1)[0])){
+      this.foundations[card.suit].push(card); // add card to foundations
+      // if card came from tableau, reveal next card
+      return true;
+    } else {
+      if (from === 'waste') {
+        this.hand.push(card); // return card to waste pile
+      } else if (from.includes('tableau')) {
+        let stack = parseInt(from[0]);
+        this.tableau[stack].push(card); // return card to tableau
+      }
+      return false;
+    }
+
   }
   
 }
