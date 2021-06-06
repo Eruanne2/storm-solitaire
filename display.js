@@ -1,0 +1,7 @@
+
+
+class Display {
+  constructor(board){
+    
+  }
+}

@@ -1,9 +1,10 @@
 const Board = require('./board.js');
+const Display = require('./display');
 
 class Game {
   constructor() {
     this.board = new Board;
-
+    this.display = new Display(this.board);
     // set event handlers
   }
   
