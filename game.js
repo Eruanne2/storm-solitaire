@@ -14,8 +14,8 @@ class Game {
   
   dragFromTableau(e) {
     let stack = e.currentTarget; // which stack is it dragged from
-    e.dataTransfer.setData('card', this.board.tableau[stack].pop());
-    e.dataTransfer.setData('from', 'tableau');
+    e.dataTransfer.setData('card', this.board.tableau[stack].slice(-1)[0]);
+    e.dataTransfer.setData('from', `${stack}tableau`);
   }
   
   dropOnFoundations(e) {
@@ -30,6 +30,11 @@ class Game {
     let card = e.dataTransfer.getData('card');
     let from = e.dataTransfer.getData('from');
     let stack = e.currentTarget; // which stack is it being dropped on
+    this.board.moveCardToTableau(card, from, stack);
+  }
+
+  won() {
+    return this.board.foundations.every(stack => stack.length === 13);
   }
 
 }

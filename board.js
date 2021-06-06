@@ -39,26 +39,40 @@ class Board {
     }
   }
 
-  moveCardToTableau(card, stack) {
-
+  moveCardToTableau(card, from, stack) {
+    if ((card.comesAfter(this.tableau[stack].slice(-1)[0])) && card.isOppositeColor(this.tableau[stack].slice(-1)[0])){
+      this.tableau[stack].push(card);
+      if (from === 'tableau') {
+        this.tableau[parseInt(from[0])].pop(); // remove card from tableau
+      }
+      return true;
+    } 
+    else {
+      if (from === 'waste') {
+        this.hand.push(card); // return card to waste pile
+      }
+      return false;
+    }
   }
 
   moveCardToFoundations(card, from) {
     if (card.comesAfter(this.foundations[card.suit].slice(-1)[0])){
       this.foundations[card.suit].push(card); // add card to foundations
-      // if card came from tableau, reveal next card
+      if (from === 'tableau') {
+        this.tableau[parseInt(from[0])].pop(); // remove card from tableau
+      }
       return true;
-    } else {
+    } 
+    else {
       if (from === 'waste') {
         this.hand.push(card); // return card to waste pile
-      } else if (from.includes('tableau')) {
-        let stack = parseInt(from[0]);
-        this.tableau[stack].push(card); // return card to tableau
       }
       return false;
     }
 
   }
+
+  
   
 }
 

@@ -9,6 +9,18 @@ class Card {
   comesAfter(card){
     return ORDER.indexOf(this.val) - ORDER.indexOf(card.val) === 1;
   }
+
+  isOppositeColor(card){
+    switch(card.suit){
+      case 'H':
+      case 'D':
+        return (this.suit === 'S' || this.suit === 'C');
+        case 'S':
+        case 'C':
+          return (this.suit === 'H' || this.suit === 'D');
+      default: return false;
+    }
+  }
 }
 
 // let c = new Card('1H')
