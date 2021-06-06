@@ -1,4 +1,4 @@
-require('./card.js');
+const Card = require('./card.js');
 
 const fullDeck = [
   'AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', 'TH', 'JH', 'QH', 'KH',
@@ -9,10 +9,34 @@ const fullDeck = [
 
 class Game {
   constructor() {
-    this.hand = fullDeck;
+    this.hand = fullDeck.map(str => new Card(str))
+    this.shuffle(this.hand);
     this.waste = []
     this.tableau = [[], [], [], [], [], [], []]
     this.foundations = [[], [], [], []]
+  }
+
+  shuffle(arr) {
+    var currentIdx = arr.length;
+    var temp, randomIdx;
+    while (currentIdx !== 0) {
+      randomIdx = Math.floor(Math.random() * currentIdx);
+      currentIdx -= 1;
+      temp = arr[currentIdx];
+      arr[currentIdx] = arr[randomIdx];
+      arr[randomIdx] = temp;
+    }
+    return arr
+  }
+
+  flipHand() {
+    this.waste.push(this.hand.pop())
+  }
+
+  restartHand() {
+    while (this.waste.length > 0) {
+      this.hand.unshift(this.waste.shift())
+    }
   }
 
   

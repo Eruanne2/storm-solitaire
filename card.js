@@ -8,5 +8,7 @@ class Card {
 
 }
 
-let c = new Card('1H')
-console.log(c.suit())
+// let c = new Card('1H')
+// console.log(c.suit)
+
+module.exports = Card;
