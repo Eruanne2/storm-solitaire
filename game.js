@@ -1,5 +1,4 @@
 const Board = require('./board.js');
-const Display = require('./display');
 
 class Game {
   constructor() {

@@ -1,4 +1,5 @@
 const Card = require('./card.js');
+const Display = require('./display.js');
 
 const fullDeck = [
   'AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', 'TH', 'JH', 'QH', 'KH',
@@ -9,10 +10,19 @@ const fullDeck = [
 
 class Board {
   constructor() {
+    this.display = new Display();
     this.hand = fullDeck.map(str => new Card(str))
     this.shuffle(this.hand);
     this.waste = []
-    this.tableau = [[], [], [], [], [], [], []]
+    this.tableau = [
+      this.hand.slice(this.hand.length - 1), 
+      this.hand.slice(this.hand.length - 2), 
+      this.hand.slice(this.hand.length - 3), 
+      this.hand.slice(this.hand.length - 4), 
+      this.hand.slice(this.hand.length - 5), 
+      this.hand.slice(this.hand.length - 6), 
+      this.hand.slice(this.hand.length - 7), 
+    ]
     this.foundations = {'H': [], 'D': [], 'S': [], 'C': []}
   }
 
