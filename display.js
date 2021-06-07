@@ -22,27 +22,29 @@ class Display {
   }
 
   render(){
+    this = { hand, waste, foundations, tableau}
+
     // hand
-    this.hand.classList.forEach(className => {
-      if (className !== 'card') this.hand.classList.remove(className);
+    hand.classList.forEach(className => {
+      if (className !== 'card') hand.classList.remove(className);
     })
 
     this.board.hand.length === 0
-    ? this.hand.classList.add('card-back-jet')
-    : this.hand.classList('empty-stack');
+    ? hand.classList.add('card-back-jet stack-edge')
+    : hand.classList('empty-stack');
 
     // waste
-    this.waste.classList.forEach(className => {
-      if (className !== 'card') this.waste.classList.remove(className);
+    waste.classList.forEach(className => {
+      if (className !== 'card') waste.classList.remove(className);
     })
 
     this.board.waste.length === 0
-    ? this.waste.classList.add(`c${this.board.waste.slice(-1)[0].val}${this.board.waste.slice(-1)[0].suit}`)
-    : this.waste.classList('empty-stack');
+    ? waste.classList.add(`c${this.board.waste.slice(-1)[0].val}${this.board.waste.slice(-1)[0].suit}`)
+    : waste.classList('empty-stack');
 
     // foundations
 
-    
+
     // tableau
   }
 }
