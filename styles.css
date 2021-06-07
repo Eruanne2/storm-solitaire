@@ -11,3 +11,19 @@ h1 {
   height: 400px;
   border: 1px solid blue;
 }
+
+#top-row, .foundations, .tableau {
+  display: flex;
+}
+
+.foundations {
+  margin-left: 50px;
+}
+
+.card {
+  height: 60px;
+  width: 40px;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin: 10px 5px;
+}

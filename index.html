@@ -19,6 +19,7 @@
     <ul class='scoring'>
       <li>Timer</li>
       <li>Moves</li>
+      <li>Undo</li>
       <li>High Score</li>
     </ul>
     <ul class='options'>
@@ -29,26 +30,29 @@
   </section>
 
   <section class='board-container'>
-    <div class='hand'></div>
-    <div class='waste'></div>
-
-    <div class='foundations-container'>
-      <ul class='foundations'>
-        <li id='foundations-1'></li>
-        <li id='foundations-2'></li>
-        <li id='foundations-3'></li>
-        <li id='foundations-4'></li>
-      </ul>
+    <div id='top-row'>
+      <div class='hand card'></div>
+      <div class='waste card'></div>
+      
+      <div class='foundations-container'>
+        <ul class='foundations'>
+          <li id='foundations-1' class='card'></li>
+          <li id='foundations-2' class='card'></li>
+          <li id='foundations-3' class='card'></li>
+          <li id='foundations-4' class='card'></li>
+        </ul>
+      </div>
     </div>
+    
     <div class='tableau-container'>
       <ul class='tableau'>
-        <li id='stack-1'></li>
-        <li id='stack-2'></li>
-        <li id='stack-3'></li>
-        <li id='stack-4'></li>
-        <li id='stack-5'></li>
-        <li id='stack-6'></li>
-        <li id='stack-7'></li>
+        <li id='stack-1' class='card'></li>
+        <li id='stack-2' class='card'></li>
+        <li id='stack-3' class='card'></li>
+        <li id='stack-4' class='card'></li>
+        <li id='stack-5' class='card'></li>
+        <li id='stack-6' class='card'></li>
+        <li id='stack-7' class='card'></li>
       </ul>
     </div>
 
