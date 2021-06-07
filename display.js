@@ -19,11 +19,32 @@ class Display {
       document.getElementById('stack-7')
     ]
 
-    // set values (image of card, height of stack, etc.)
-    
   }
 
+  render(){
+    // hand
+    this.hand.classList.forEach(className => {
+      if (className !== 'card') this.hand.classList.remove(className);
+    })
 
+    this.board.hand.length === 0
+    ? this.hand.classList.add('card-back-jet')
+    : this.hand.classList('empty-stack');
+
+    // waste
+    this.waste.classList.forEach(className => {
+      if (className !== 'card') this.waste.classList.remove(className);
+    })
+
+    this.board.waste.length === 0
+    ? this.waste.classList.add(`c${this.board.waste.slice(-1)[0].val}${this.board.waste.slice(-1)[0].suit}`)
+    : this.waste.classList('empty-stack');
+
+    // foundations
+
+    
+    // tableau
+  }
 }
 
 module.exports = Display;

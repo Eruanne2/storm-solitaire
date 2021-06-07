@@ -24,6 +24,8 @@ class Board {
       this.hand.slice(this.hand.length - 7), 
     ]
     this.foundations = {'H': [], 'D': [], 'S': [], 'C': []}
+
+    this.display.render();
   }
 
   shuffle(arr) {
@@ -40,13 +42,15 @@ class Board {
   }
 
   flipHand() {
-    this.waste.push(this.hand.pop())
+    this.waste.push(this.hand.pop());
+    this.display.render();
   }
 
   restartHand() {
     while (this.waste.length > 0) {
-      this.hand.unshift(this.waste.shift())
+      this.hand.unshift(this.waste.shift());
     }
+    this.display.render();
   }
 
   moveCardToTableau(card, from, stack) {
@@ -63,6 +67,7 @@ class Board {
       }
       return false;
     }
+    this.display.render();
   }
 
   moveCardToFoundations(card, from) {
@@ -79,10 +84,9 @@ class Board {
       }
       return false;
     }
-
+    this.display.render();
   }
 
-  
   
 }
 
