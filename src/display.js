@@ -22,7 +22,7 @@ class Display {
   }
 
   render(){
-    this = { hand, waste, foundations, tableau}
+    let { hand, waste, foundations, tableau} = this;
 
     // hand
     hand.classList.forEach(className => {
